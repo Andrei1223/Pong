@@ -171,6 +171,7 @@ class Player:
                     index = i
                     x1, y1 = punct
                     x2, y2 = aux
+
                     # find the closest point to the ball
                     if int((ball_x - x1) ** 2 + (ball_y - y1) ** 2) < int((ball_x - x2) ** 2 + (ball_y - y2) ** 2):
                         primul = punct

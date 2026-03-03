@@ -1,5 +1,4 @@
 import pygame
-import time
 
 nume = './docs/level'
 block_path = './docs/pics/block.png'
@@ -19,15 +18,12 @@ nume = nume + str(level) + '/matrix'
 WIDTH , HEIGHT = 1200, 540
 
 
-# Initialize Pygame
 pygame.init()
 
-timer = pygame.time.get_ticks()  # Initialize timer
+timer = pygame.time.get_ticks()
 
-# Create a display surface (window)
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
-# Set the title of the window
 pygame.display.set_caption("Make Level" + ' ' + str(level))
 
 block_image = pygame.image.load(block_path)
@@ -39,11 +35,11 @@ button_rect = [[None] * columns for _ in range(rows)]
 # read from file the current format file
 
 
-# Open the file for reading
+# open the file for reading
 with open(nume, "r") as file:
-    content = file.readline().strip()  # Read the first line and remove leading/trailing spaces
+    content = file.readline().strip()
 
-# Split the content into individual elements
+# split the content into individual elements
 elements = content.split()
 
 for i in range(1, int(elements[0]) + 1):
@@ -53,11 +49,12 @@ for i in range(1, int(elements[0]) + 1):
 
 for i in range(rows):
     for j in range(columns):
-        # Button properties
+        # button properties
         button_rect[i][j] = block_image.get_rect(topleft=(j * 30, i * 30))
 
 last = (0, 0, 0, 0)
-# Main loop
+
+
 running = True
 while running:
     for event in pygame.event.get():
@@ -65,7 +62,7 @@ while running:
             running = False
             
 
-    # Clear the screen
+    # clear the screen
     screen.fill((0, 0, 0))
     
     for i in range(rows):
@@ -84,7 +81,7 @@ while running:
                     else:
                         matrix[i][j] = True
 
-    # Draw the buttons that are clicked
+
     for i in range(rows):
         for j in range(columns):
             if matrix[i][j]:
@@ -106,10 +103,10 @@ while running:
         for i in range(rows):
             for j in range(columns):
                 matrix[i][j] = False
-    # Update the display
+
     pygame.display.flip()
 
-# Clean up
+
 pygame.quit()
 
 # write in the file the cubes' positions

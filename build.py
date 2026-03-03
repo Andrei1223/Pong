@@ -21,9 +21,8 @@ WEIGHT = 1200
 
 class Create:
 
-    # Constructor
     def __init__(self):
-        # Loading the images
+        # loading the images
         self.meniu_image = pygame.image.load(meniu_path)
         self.block_image = pygame.image.load(block_path)
         self.platform_image = pygame.image.load(platform_path)
@@ -33,7 +32,7 @@ class Create:
         self.lock_image = pygame.image.load(lock_path).convert_alpha()
 
 
-        # Scaling the images
+        # scaling the images
         self.meniu_image = pygame.transform.scale(self.meniu_image, (WEIGHT, HEIGHT))
         self.block_image = pygame.transform.scale(self.block_image, (30, 30))
         self.platform_image = pygame.transform.scale(self.platform_image, (200, 30))
@@ -42,7 +41,7 @@ class Create:
         self.levels_image = pygame.transform.scale(self.levels_image, (WEIGHT, HEIGHT))
         self.lock_image = pygame.transform.scale(self.lock_image, (80, 80))
 
-    # Method to show an image
+    # method to show an image
     def showImage(screen, image, coord_x, coord_y):
         return screen.blit(image, (coord_x, coord_y))
     

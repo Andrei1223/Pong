@@ -4,10 +4,9 @@ from movement import Player
 import math
 import time
 
-# Initialize Pygame
 pygame.init()
 
-# Set up display
+# set up display
 WIDTH, HEIGHT = 1200, 800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Pong 1.2")
@@ -87,7 +86,7 @@ while running:
                 #enter_level = True
                 level_page = True # move to level page
                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
-            elif meniu and button_x < mouse_x < button_x + button_width and button_y + 318 < mouse_y < button_y + button_height + 318:
+            elif meniu and button_x < mouse_x < button_x + button_width and button_y + 322 < mouse_y < button_y + button_height + 322:
                 running = False
             elif level_page and 30 < mouse_x < 30 + 70 and 30 < mouse_y < 30 + 70:
                 level_page = False
@@ -104,7 +103,7 @@ while running:
                                 meniu = False
                                 enter_level = True
                                 pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_ARROW)
-            elif meniu and not level_page and button_x < mouse_x < button_x + button_width and button_y + 210 < mouse_y < button_y + button_height + 210: # reset the game
+            elif meniu and not level_page and button_x < mouse_x < button_x + button_width and button_y + 216 < mouse_y < button_y + button_height + 216: # reset the game
                 # reset the progress
                 for i in range(1, 4):
                     for j in range(1, 9):
